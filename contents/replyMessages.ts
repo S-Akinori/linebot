@@ -296,7 +296,7 @@ export const familiyPositionText = {
 
 export const familiyPosition = {
     "type": "flex",
-    "altText": "現在治療中ですか？",
+    "altText": "被害者とあなたの関係を教えてください。",
     "contents": {
         "type": "carousel",
         "contents": [

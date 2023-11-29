@@ -79,10 +79,10 @@ export const POST = async (req: Request) => {
                         const messageObject = getMessageObject(condition.next)!
                         if (messageObject.id == 22 && row?.get('accidentType') == '死亡') {//診断結果を表示
                             const resultMessage = await getDeathConsulationMoneyText(userId);
-                            replyLineMessage(resultMessage.messages.concat(messageObject.messages), event.replyToken)
+                            replyLineMessage(resultMessage.messages.concat(messageObject.messages as any[]), event.replyToken)
                         } else if (messageObject.id == 22) {
                             const resultMessage = await getConsulationMoneyText(userId);
-                            replyLineMessage(resultMessage.messages.concat(messageObject.messages), event.replyToken)
+                            replyLineMessage(resultMessage.messages.concat(messageObject.messages as any[]), event.replyToken)
                         } else {
                             replyLineMessage(messageObject.messages, event.replyToken)
                         }
@@ -91,10 +91,10 @@ export const POST = async (req: Request) => {
                         const messageObject = getMessageObject(currentMessageObject.next)!
                         if (messageObject.id == 22 && row?.get('accidentType') == '死亡') {//診断結果を表示
                             const resultMessage = await getDeathConsulationMoneyText(userId);
-                            replyLineMessage(resultMessage.messages.concat(messageObject.messages), event.replyToken)
+                            replyLineMessage(resultMessage.messages.concat(messageObject.messages as any[]), event.replyToken)
                         } else if (messageObject.id == 22) {
                             const resultMessage = await getConsulationMoneyText(userId);
-                            replyLineMessage(resultMessage.messages.concat(messageObject.messages), event.replyToken)
+                            replyLineMessage(resultMessage.messages.concat(messageObject.messages as any[]), event.replyToken)
                         } else {
                             replyLineMessage(messageObject.messages, event.replyToken)
                         }
@@ -104,10 +104,10 @@ export const POST = async (req: Request) => {
                     const messageObject = getMessageObject(currentMessageObject.next)!
                     if (messageObject.id == 22 && row?.get('accidentType') == '死亡') {//診断結果を表示
                         const resultMessage = await getDeathConsulationMoneyText(userId);
-                        replyLineMessage(resultMessage.messages.concat(messageObject.messages), event.replyToken)
+                        replyLineMessage(resultMessage.messages.concat(messageObject.messages as any[]), event.replyToken)
                     } else if (messageObject.id == 22) {
                         const resultMessage = await getConsulationMoneyText(userId);
-                        replyLineMessage(resultMessage.messages.concat(messageObject.messages), event.replyToken)
+                        replyLineMessage(resultMessage.messages.concat(messageObject.messages as any[]), event.replyToken)
                     } else {
                         replyLineMessage(messageObject.messages, event.replyToken)
                     }
