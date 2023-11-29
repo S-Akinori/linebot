@@ -115,6 +115,7 @@ export const POST = async (req: Request) => {
             }
         }
     }
+    return Response.json({ status: 'ok' })
 }
 
 async function findRowByLineId(sheet: GoogleSpreadsheetWorksheet, lineId: string) {
