@@ -75,7 +75,7 @@ export const POST = async (req: Request) => {
                         replyLineMessage(exceptionMessage.messages, event.replyToken)
                         return
                     } else if (condition) {
-                        saveData(sheet, userId, condition.next, currentMessageObject.session, message)
+                        await saveData(sheet, userId, condition.next, currentMessageObject.session, message)
                         const messageObject = getMessageObject(condition.next)!
                         if (messageObject.id == 22 && row?.get('accidentType') == '死亡') {//診断結果を表示
                             const resultMessage = await getDeathConsulationMoneyText(userId);
@@ -87,7 +87,7 @@ export const POST = async (req: Request) => {
                             replyLineMessage(messageObject.messages, event.replyToken)
                         }
                     } else {
-                        saveData(sheet, userId, currentMessageObject.next, currentMessageObject.session, message)
+                        await saveData(sheet, userId, currentMessageObject.next, currentMessageObject.session, message)
                         const messageObject = getMessageObject(currentMessageObject.next)!
                         if (messageObject.id == 22 && row?.get('accidentType') == '死亡') {//診断結果を表示
                             const resultMessage = await getDeathConsulationMoneyText(userId);
@@ -100,7 +100,7 @@ export const POST = async (req: Request) => {
                         }
                     }
                 } else {
-                    saveData(sheet, userId, currentMessageObject.next, currentMessageObject.session, message)
+                    await saveData(sheet, userId, currentMessageObject.next, currentMessageObject.session, message)
                     const messageObject = getMessageObject(currentMessageObject.next)!
                     if (messageObject.id == 22 && row?.get('accidentType') == '死亡') {//診断結果を表示
                         const resultMessage = await getDeathConsulationMoneyText(userId);
